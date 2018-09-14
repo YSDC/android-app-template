@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
@@ -19,10 +23,6 @@ import com.ysdc.utils.NetworkUtils;
 
 import javax.inject.Inject;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import butterknife.Unbinder;
 import timber.log.Timber;
 

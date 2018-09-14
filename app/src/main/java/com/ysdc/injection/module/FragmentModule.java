@@ -2,10 +2,10 @@ package com.ysdc.injection.module;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 
 import com.ysdc.injection.annotations.ActivityScope;
 
-import androidx.fragment.app.Fragment;
 import dagger.Module;
 import dagger.Provides;
 

@@ -3,14 +3,15 @@
 buildscript {
 
     ext {
-        gradleVersion = '3.2.0-rc03'
+        gradleVersion = '3.1.0'
         gmsVersion = '4.1.0'
         gradleVersionPlugin = '0.17.0'
     }
     repositories {
-        google()
         jcenter()
         mavenCentral()
+        google()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:${gradleVersion}"
@@ -21,9 +22,9 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         jcenter()
         mavenCentral()
+        google()
         maven { url "https://jitpack.io" }
     }
 }

@@ -3,9 +3,11 @@ package com.ysdc.ui.base;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
+import android.support.design.widget.BottomSheetDialogFragment;
 import android.view.View;
 
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.ysdc.R;
 import com.ysdc.app.MyApplication;
 import com.ysdc.exception.NoConnectivityException;
@@ -13,8 +15,6 @@ import com.ysdc.injection.component.ActivityComponent;
 import com.ysdc.injection.component.FragmentComponent;
 import com.ysdc.injection.module.FragmentModule;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import butterknife.Unbinder;
 
 /**

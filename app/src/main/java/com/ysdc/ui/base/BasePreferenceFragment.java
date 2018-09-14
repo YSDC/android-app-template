@@ -3,6 +3,11 @@ package com.ysdc.ui.base;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
+import android.support.annotation.XmlRes;
+import android.support.v7.preference.PreferenceFragmentCompat;
+import android.support.v7.view.ContextThemeWrapper;
 import android.util.TypedValue;
 import android.view.View;
 
@@ -13,11 +18,6 @@ import com.ysdc.injection.component.ActivityComponent;
 import com.ysdc.injection.component.FragmentComponent;
 import com.ysdc.injection.module.FragmentModule;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.annotation.XmlRes;
-import androidx.appcompat.view.ContextThemeWrapper;
-import androidx.preference.PreferenceFragmentCompat;
 import butterknife.Unbinder;
 
 /**
