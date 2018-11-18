@@ -20,7 +20,8 @@ package com.ysdc.ui.base;
  */
 
 import android.content.res.Resources;
-import android.support.annotation.StringRes;
+
+import androidx.annotation.StringRes;
 
 public interface MvpView {
 

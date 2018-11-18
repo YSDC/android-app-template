@@ -1,49 +1,48 @@
 ext {
     versions = [
         multidex        : "2.0.0",
-        support         : "1.0.0-alpha1",
-        constraint      : "1.1.0",
-        firebasecfg     : '16.0.0',
-        firebasecore    : '16.0.0',
-        firebasecrash   : '16.2.0',
-        firebasemsg     : '17.3.1',
-        play            : '15.0.1',
-        playauth        : '16.0.0',
+        support         : "1.0.0",
+        constraint      : "1.1.2",
+        firebasecfg     : '16.1.0',
+        firebasecore    : '16.0.4',
+        firebasecrash   : '16.2.1',
+        firebasemsg     : '17.3.4',
+        play            : '16.0.0',
+        playbase        : '16.0.1',
+        playauth        : '16.0.1',
         googleanalytics : '16.0.0',
-        tagmanager      : '16.0.0',
-        okHttp          : "3.11.0",
+        tagmanager      : '16.0.5',
+        okHttp          : "3.12.0",
         retrofit        : '2.4.0',
-        dagger          : '2.17',
-        butterKnife     : '8.8.1',
-        rxJava          : '2.2.2',
+        dagger          : '2.19',
+        butterKnife     : '9.0.0-rc1',
+        rxJava          : '2.2.3',
         rxJavaAndroid   : '2.1.0',
-        facebook        : '4.+',
+        //facebook        : '4.+',
         traceur         : '1.0.1',
         stetho          : '1.5.0',
         timber          : '4.7.1',
-        glide           : '4.8.0',
-        leakcanary      : '1.6.1',
+        //glide           : '4.8.0',
+        leakcanary      : '1.6.2',
         crashlytics     : '2.9.5',
-        appsflyer       : '4.+@aar',
-        snowplow        : '0.6.2@aar',
-        espresso        : '3.0.2',
-        testRunner      : '1.0.2',
-        hamcrest        : '1.3',
+        //appsflyer       : '4.+@aar',
+        //snowplow        : '0.6.2@aar',
+        espresso        : '3.1.0',
+        testRunner      : '1.1.0',
+        //hamcrest        : '1.3',
         restMock        : '0.3.1',
-        mockito         : '2.22.0',
+        mockito         : '2.6.1',
         junit           : '4.12',
-        robolectric     : '4.0-alpha-3',
-        assertj         : '1.2.0',
-        carousel        : 'v1.1',
-        badgetab        : 'v1.2',
-        bottomBar       : '2.2.0',
-        prettytime      : '4.0.1.Final',
-        pageIndicator   : '1.0.2@aar',
-        multibackstack  : '1.2.1',
-        photoview       : '2.0.0',
-        shimmer         : '0.3.0@aar'
-
-
+        //robolectric     : '4.0-alpha-3',
+        assertj         : '1.2.0'
+        //carousel        : 'v1.1',
+        //badgetab        : 'v1.2',
+        //bottomBar       : '2.2.0',
+        //prettytime      : '4.0.1.Final',
+        //pageIndicator   : '1.0.2@aar',
+        //multibackstack  : '1.2.1',
+        //photoview       : '2.0.0',
+        //shimmer         : '0.3.0@aar'
     ]
 
     mulitdex = [multidex: "androidx.multidex:multidex:$versions.multidex"]
@@ -52,10 +51,11 @@ ext {
 
     junit = [junit: "junit:junit:$versions.junit"]
 
-    analytics = [facebook   : "com.facebook.android:facebook-android-sdk:$versions.facebook",
-                 appsflyer  : "com.appsflyer:af-android-sdk:$versions.appsflyer",
+    analytics = [
+            //facebook   : "com.facebook.android:facebook-android-sdk:$versions.facebook",
+            //     appsflyer  : "com.appsflyer:af-android-sdk:$versions.appsflyer",
                  analytics  : "com.google.android.gms:play-services-analytics:$versions.googleanalytics",
-                 snowplow   : "com.snowplowanalytics:snowplow-android-tracker:$versions.snowplow",
+            //     snowplow   : "com.snowplowanalytics:snowplow-android-tracker:$versions.snowplow",
                  crashlytics: "com.crashlytics.sdk.android:crashlytics:$versions.crashlytics"
     ]
 
@@ -119,25 +119,25 @@ ext {
 //    ]
 
     unitTest = [
-        harcrestCore       : "org.hamcrest:hamcrest-core:$versions.hamcrest",
-        harmcrestLib       : "org.hamcrest:hamcrest-library:$versions.hamcrest",
-        hamcrestIntegration: "org.hamcrest:hamcrest-integration:$versions.hamcrest",
-        robolectric        : "org.robolectric:robolectric:$versions.robolectric",
+//        harcrestCore       : "org.hamcrest:hamcrest-core:$versions.hamcrest",
+//        harmcrestLib       : "org.hamcrest:hamcrest-library:$versions.hamcrest",
+//        hamcrestIntegration: "org.hamcrest:hamcrest-integration:$versions.hamcrest",
+//        robolectric        : "org.robolectric:robolectric:$versions.robolectric",
         restMock           : "com.github.andrzejchm.RESTMock:android:$versions.restMock",
         assertj            : "com.squareup.assertj:assertj-android:$versions.assertj",
     ] + junit + mockito
 
     androidTests = [
         mockitoAndroid    : "org.mockito:mockito-android:$versions.mockito",
-        espressoCore      : "com.android.support.test.espresso:espresso-core:$versions.espresso",
-        espressoContrib   : "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
-        espressoIntents   : "com.android.support.test.espresso:espresso-intents:$versions.espresso",
-        espressoAcc       : "com.android.support.test.espresso:espresso-accessibility:$versions.espresso",
-        espressoIdle      : "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso",
-        espressoConcurrent: "com.android.support.test.espresso.idling:idling-concurrent:$versions.espresso",
-        espressoNetIdle   : "com.android.support.test.espresso.idling:idling-net:$versions.espresso",
-        testRunner        : "com.android.support.test:runner:$versions.testRunner",
-        testRules         : "com.android.support.test:rules:$versions.testRunner"
+        espressoCore      : "androidx.test.espresso:espresso-core:$versions.espresso",
+        espressoContrib   : "androidx.test.espresso:espresso-contrib:$versions.espresso",
+        espressoIntents   : "androidx.test.espresso:espresso-intents:$versions.espresso",
+        espressoAcc       : "androidx.test.espresso:espresso-accessibility:$versions.espresso",
+        espressoIdle      : "androidx.test.espresso:espresso-idling-resource:$versions.espresso",
+        espressoConcurrent: "androidx.test.espresso.idling:idling-concurrent:$versions.espresso",
+        espressoNetIdle   : "androidx.test.espresso.idling:idling-net:$versions.espresso",
+        testRunner        : "androidx.test:runner:$versions.testRunner",
+        testRules         : "androidx.test:rules:$versions.testRunner"
     ] + mockito
 
     leakCannary = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
@@ -149,9 +149,9 @@ ext {
     butterKnife = "com.jakewharton:butterknife:$versions.butterKnife"
     butterKnifeCompiler = "com.jakewharton:butterknife-compiler:$versions.butterKnife"
 
-    glide = "com.github.bumptech.glide:glide:$versions.glide"
-    glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
-    glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+    //glide = "com.github.bumptech.glide:glide:$versions.glide"
+    //glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
+    //glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
 
     mulitdexLibs = mulitdex.values()
     googlePlayLibs = googlePlay.values()
@@ -159,11 +159,11 @@ ext {
     networkLibs = retrofit.values() + okHttp.values()
     stethoLibs = stetho.values()
     rxJavaLibs = rxJava.values()
-    otherLibs = [butterKnife, timber, dagger, glide, glideOkhttp]
+    otherLibs = [butterKnife, timber, dagger]//, glide, glideOkhttp]
 
     debugLibs = leakCannary
     releaseLibs = leakCannary
-    annotationProcessorLibs = [butterKnifeCompiler, daggerCompiler, glideCompiler]
+    annotationProcessorLibs = [butterKnifeCompiler, daggerCompiler]//, glideCompiler]
 
     unitTestLibs = unitTest.values() + leakCannary
     androidTestsLibs = androidTests.values() + supportLibs

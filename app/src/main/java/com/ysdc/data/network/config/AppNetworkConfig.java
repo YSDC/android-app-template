@@ -1,9 +1,10 @@
 package com.ysdc.data.network.config;
 
-import android.support.annotation.NonNull;
 
 import com.ysdc.BuildConfig;
 import com.ysdc.data.prefs.MyPreferences;
+
+import androidx.annotation.NonNull;
 
 import static com.ysdc.data.prefs.MyPreferences.BASE_URL;
 

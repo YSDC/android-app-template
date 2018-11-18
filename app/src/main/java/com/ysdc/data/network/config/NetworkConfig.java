@@ -1,6 +1,7 @@
 package com.ysdc.data.network.config;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by david on 2/7/18.
