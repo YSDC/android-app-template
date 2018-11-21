@@ -16,8 +16,6 @@ import com.ysdc.injection.component.DaggerAppComponent;
 import com.ysdc.injection.module.AppModule;
 import com.ysdc.utils.CrashlyticsUtils;
 
-import androidx.multidex.MultiDex;
-import androidx.multidex.MultiDexApplication;
 import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
 
@@ -25,7 +23,7 @@ import timber.log.Timber;
  * Created by david on 1/23/18.
  */
 
-public class MyApplication extends MultiDexApplication implements Application
+public class MyApplication extends Application implements Application
         .ActivityLifecycleCallbacks {
 
     private AppComponent appComponent;
@@ -64,12 +62,6 @@ public class MyApplication extends MultiDexApplication implements Application
             Timber.plant(new CrashlyticsUtils.CrashlyticsTree());
             initFacebook();
         }
-    }
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(MyApplication.this);
     }
 
     /**

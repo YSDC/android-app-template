@@ -54,7 +54,6 @@ android {
 }
 
 dependencies {
-    implementation mulitdexLibs
     implementation supportLibs
     implementation googlePlayLibs
     implementation networkLibs

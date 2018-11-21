@@ -1,6 +1,5 @@
 ext {
     versions = [
-        multidex        : "2.0.0",
         support         : "1.0.0",
         constraint      : "1.1.2",
         firebasecfg     : '16.1.0',
@@ -10,12 +9,12 @@ ext {
         play            : '16.0.0',
         playbase        : '16.0.1',
         playauth        : '16.0.1',
-        googleanalytics : '16.0.0',
-        tagmanager      : '16.0.5',
-        okHttp          : "3.12.0",
-        retrofit        : '2.4.0',
+        //googleanalytics : '16.0.4',
+        //tagmanager      : '16.0.5',
+        okHttp          : "3.11.0",
+        retrofit        : '2.5.0',
         dagger          : '2.19',
-        butterKnife     : '9.0.0-rc1',
+        butterKnife     : '9.0.0-rc2',
         rxJava          : '2.2.3',
         rxJavaAndroid   : '2.1.0',
         //facebook        : '4.+',
@@ -45,17 +44,11 @@ ext {
         //shimmer         : '0.3.0@aar'
     ]
 
-    mulitdex = [multidex: "androidx.multidex:multidex:$versions.multidex"]
-
     mockito = [mockito: "org.mockito:mockito-core:$versions.mockito"]
 
     junit = [junit: "junit:junit:$versions.junit"]
 
     analytics = [
-            //facebook   : "com.facebook.android:facebook-android-sdk:$versions.facebook",
-            //     appsflyer  : "com.appsflyer:af-android-sdk:$versions.appsflyer",
-                 analytics  : "com.google.android.gms:play-services-analytics:$versions.googleanalytics",
-            //     snowplow   : "com.snowplowanalytics:snowplow-android-tracker:$versions.snowplow",
                  crashlytics: "com.crashlytics.sdk.android:crashlytics:$versions.crashlytics"
     ]
 
@@ -87,8 +80,9 @@ ext {
 
     okHttp = [
         logger       : "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
-        okhttp       : "com.squareup.okhttp3:okhttp:$versions.okHttp",
-        urlconnection: "com.squareup.okhttp3:okhttp-urlconnection:$versions.okHttp"
+        okhttp       : "com.squareup.okhttp3:okhttp:$versions.okHttp"
+        //TODO: uncomment this plugin when okhttp has fix his bug
+        //urlconnection: "com.squareup.okhttp3:okhttp-urlconnection:$versions.okHttp"
     ]
 
     stetho = [
@@ -100,7 +94,6 @@ ext {
         maps             : "com.google.android.gms:play-services-maps:$versions.play",
         base             : "com.google.android.gms:play-services-base:$versions.play",
         auth             : "com.google.android.gms:play-services-auth:$versions.playauth",
-        tagmanager       : "com.google.android.gms:play-services-tagmanager:$versions.tagmanager",
         crash            : "com.google.firebase:firebase-crash:$versions.firebasecrash",
         firebaseCore     : "com.google.firebase:firebase-core:$versions.firebasecore",
         firebaseMessaging: "com.google.firebase:firebase-messaging:$versions.firebasemsg",
@@ -153,7 +146,6 @@ ext {
     //glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
     //glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
 
-    mulitdexLibs = mulitdex.values()
     googlePlayLibs = googlePlay.values()
     supportLibs = supportDeps.values()
     networkLibs = retrofit.values() + okHttp.values()
