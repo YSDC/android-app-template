@@ -1,9 +1,10 @@
 ext {
     versions = [
         support         : "1.0.0",
+        supportmaterial : "1.0.0-rc01",
         constraint      : "1.1.2",
-        firebasecfg     : '16.1.0',
-        firebasecore    : '16.0.4',
+        firebasecfg     : '16.1.3',
+        firebasecore    : '16.0.6',
         firebasecrash   : '16.2.1',
         firebasemsg     : '17.3.4',
         play            : '16.0.0',
@@ -11,26 +12,26 @@ ext {
         playauth        : '16.0.1',
         //googleanalytics : '16.0.4',
         //tagmanager      : '16.0.5',
-        okHttp          : "3.11.0",
+        okHttp          : "3.12.1",
         retrofit        : '2.5.0',
-        dagger          : '2.19',
-        butterKnife     : '9.0.0-rc2',
-        rxJava          : '2.2.3',
+        dagger          : '2.21',
+        butterKnife     : '10.0.0',
+        rxJava          : '2.2.6',
         rxJavaAndroid   : '2.1.0',
         //facebook        : '4.+',
         traceur         : '1.0.1',
         stetho          : '1.5.0',
         timber          : '4.7.1',
-        //glide           : '4.8.0',
-        leakcanary      : '1.6.2',
-        crashlytics     : '2.9.5',
+        glide           : '4.8.0',
+        leakcanary      : '1.6.3',
+        crashlytics     : '2.9.8@aar',
         //appsflyer       : '4.+@aar',
         //snowplow        : '0.6.2@aar',
         espresso        : '3.1.0',
         testRunner      : '1.1.0',
         //hamcrest        : '1.3',
-        restMock        : '0.3.1',
-        mockito         : '2.6.1',
+        restMock        : '0.3.2',
+        mockito         : '2.23.4',
         junit           : '4.12',
         //robolectric     : '4.0-alpha-3',
         assertj         : '1.2.0'
@@ -56,7 +57,7 @@ ext {
         constraint       : "androidx.constraintlayout:constraintlayout:$versions.constraint",
         cardView         : "androidx.cardview:cardview:$versions.support",
         appcompatV7      : "androidx.appcompat:appcompat:$versions.support",
-        design           : "com.google.android.material:material:$versions.support",
+        design           : "com.google.android.material:material:$versions.supportmaterial",
         coordLayout      : "androidx.coordinatorlayout:coordinatorlayout:$versions.support",
         recyclerView     : "androidx.recyclerview:recyclerview:$versions.support",
         supportAnnotation: "androidx.annotation:annotation:$versions.support",
@@ -80,9 +81,10 @@ ext {
 
     okHttp = [
         logger       : "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
-        okhttp       : "com.squareup.okhttp3:okhttp:$versions.okHttp"
+        okhttp       : "com.squareup.okhttp3:okhttp:$versions.okHttp",
         //TODO: uncomment this plugin when okhttp has fix his bug
-        //urlconnection: "com.squareup.okhttp3:okhttp-urlconnection:$versions.okHttp"
+            //TODO: Check if fixed
+        urlconnection: "com.squareup.okhttp3:okhttp-urlconnection:$versions.okHttp"
     ]
 
     stetho = [
@@ -92,7 +94,7 @@ ext {
 
     googlePlay = [
         maps             : "com.google.android.gms:play-services-maps:$versions.play",
-        base             : "com.google.android.gms:play-services-base:$versions.play",
+        base             : "com.google.android.gms:play-services-base:$versions.playbase",
         auth             : "com.google.android.gms:play-services-auth:$versions.playauth",
         crash            : "com.google.firebase:firebase-crash:$versions.firebasecrash",
         firebaseCore     : "com.google.firebase:firebase-core:$versions.firebasecore",
@@ -142,20 +144,20 @@ ext {
     butterKnife = "com.jakewharton:butterknife:$versions.butterKnife"
     butterKnifeCompiler = "com.jakewharton:butterknife-compiler:$versions.butterKnife"
 
-    //glide = "com.github.bumptech.glide:glide:$versions.glide"
-    //glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
-    //glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+    glide = "com.github.bumptech.glide:glide:$versions.glide"
+    glideCompiler = "com.github.bumptech.glide:compiler:$versions.glide"
+    glideOkhttp = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
 
     googlePlayLibs = googlePlay.values()
     supportLibs = supportDeps.values()
     networkLibs = retrofit.values() + okHttp.values()
     stethoLibs = stetho.values()
     rxJavaLibs = rxJava.values()
-    otherLibs = [butterKnife, timber, dagger]//, glide, glideOkhttp]
+    otherLibs = [butterKnife, timber, dagger, glide, glideOkhttp]
 
     debugLibs = leakCannary
     releaseLibs = leakCannary
-    annotationProcessorLibs = [butterKnifeCompiler, daggerCompiler]//, glideCompiler]
+    annotationProcessorLibs = [butterKnifeCompiler, daggerCompiler, glideCompiler]
 
     unitTestLibs = unitTest.values() + leakCannary
     androidTestsLibs = androidTests.values() + supportLibs

@@ -3,23 +3,23 @@
 buildscript {
 
     ext {
-        gradleVersion = '3.2.1'
-        gmsVersion = '4.1.0'
+        gradleVersion = '3.3.0'
+        gmsVersion = '4.2.0'
         gradleVersionPlugin = '0.20.0'
-        //fabricVersion = '1.+'
+        fabricGradleVersion = '1.27.0'
     }
     repositories {
         google()
         jcenter()
         mavenCentral()
-        maven { url "https://jitpack.io" }
         maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:${gradleVersion}"
         classpath "com.google.gms:google-services:${gmsVersion}"
         classpath "com.github.ben-manes:gradle-versions-plugin:${gradleVersionPlugin}"
-        //classpath "io.fabric.tools:gradle:${fabricVersion}"
+        classpath "io.fabric.tools:gradle:${fabricGradleVersion}"
     }
 }
 
@@ -28,6 +28,7 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
+        maven { url 'https://maven.fabric.io/public' }
         maven { url "https://jitpack.io" }
     }
 }

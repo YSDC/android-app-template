@@ -1,9 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 apply plugin: 'com.github.ben-manes.versions'
 
 apply from: 'linter.gradle'
 apply from: 'dependencies.gradle'
 apply from: 'jacoco.gradle'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
 
 android {
     compileSdkVersion 28

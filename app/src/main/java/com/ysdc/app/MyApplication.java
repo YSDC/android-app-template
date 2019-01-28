@@ -2,11 +2,9 @@ package com.ysdc.app;
 
 import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
-import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.Stetho;
 import com.squareup.leakcanary.LeakCanary;
 import com.ysdc.BuildConfig;
@@ -16,7 +14,6 @@ import com.ysdc.injection.component.DaggerAppComponent;
 import com.ysdc.injection.module.AppModule;
 import com.ysdc.utils.CrashlyticsUtils;
 
-import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
 
 /**
@@ -58,7 +55,8 @@ public class MyApplication extends Application implements Application
             LeakCanary.install(this);
             Traceur.enableLogging();
         } else {
-            Fabric.with(this, new Crashlytics());
+            //TODO: uncomment when Fabric is set
+            //Fabric.with(this, new Crashlytics());
             Timber.plant(new CrashlyticsUtils.CrashlyticsTree());
             initFacebook();
         }

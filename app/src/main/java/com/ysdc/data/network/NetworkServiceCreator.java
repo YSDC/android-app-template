@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
 //import okhttp3.JavaNetCookieJar;
+import okhttp3.JavaNetCookieJar;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -50,9 +51,7 @@ public abstract class NetworkServiceCreator {
 
         CookieManager cookieManager = new CookieManager();
         cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-        //TODO: uncomment when OKHTTP release a fix in version 3.13 (3.12 has bugs, 3.11 hasn't
-        // this class)
-        //httpClient.cookieJar(new JavaNetCookieJar(cookieManager));
+        httpClient.cookieJar(new JavaNetCookieJar(cookieManager));
 
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(message -> Timber.d(message));
         if (generalConfig.isDebug()) {
